@@ -1,0 +1,572 @@
+/*pagina suporte*/ ok
+:root {
+    --ink: #0e1a2b;
+    --paper: #f4f6f9;
+    --line: #d9dfe8;
+    --blue: #2457f5;
+    --soft: #e7edff;
+    --muted: #5a667a;
+    --ok: #0f8a5f;
+    --pink: #FF2D78;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: "Poppins", system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+/* =====================================
+   CABEÇALHO
+===================================== */
+
+header {
+    width: 100%;
+    background: #000;
+    border-bottom: 1px solid #222;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1180px;
+    margin: auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    flex-wrap: wrap;
+    background: #000;
+}
+
+.logo {
+    display: block;
+    width: 130px;
+    height: 55px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex: 1;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+nav a:hover {
+    color: var(--pink);
+}
+
+nav a[aria-current] {
+    border-bottom: 2px solid var(--pink);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 14px;
+}
+
+.header-right a {
+    color: #fff;
+}
+
+.btn-menu {
+    background: var(--pink);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 999px;
+    transition: background .3s ease;
+}
+
+.btn-menu:hover {
+    background: #d91e65;
+}
+
+/* =====================================
+   CONTEÚDO PRINCIPAL
+===================================== */
+
+main {
+    width: 100%;
+    max-width: 1180px;
+    margin: auto;
+    padding: 56px 24px 40px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 440px);
+    gap: 56px;
+    align-items: start;
+}
+
+h1 {
+    max-width: 14em;
+    font-size: clamp(2rem, 4.2vw, 3.1rem);
+    line-height: 1.15;
+    font-weight: 700;
+}
+
+.lead {
+    max-width: 34em;
+    margin-top: 18px;
+    color: var(--muted);
+}
+
+.scope {
+    max-width: 34em;
+    margin-top: 34px;
+    display: grid;
+    gap: 22px;
+}
+
+.scope h2 {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.scope ul {
+    display: grid;
+    gap: 6px;
+    list-style: none;
+    font-size: .95rem;
+}
+
+.scope li {
+    position: relative;
+    padding-left: 26px;
+}
+
+.scope li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--ok);
+    font-weight: 700;
+}
+
+.scope .no {
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+}
+
+.scope .no li::before {
+    content: "✕";
+    color: #b42318;
+}
+
+/* =====================================
+   CHAT
+===================================== */
+
+.chat {
+    width: 100%;
+    min-width: 0;
+    height: 600px;
+    position: sticky;
+    top: 24px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: 0 18px 50px rgba(14, 26, 43, .14);
+    overflow: hidden;
+}
+
+.chat-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: var(--ink);
+    color: #fff;
+}
+
+.avatar {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    background: var(--pink);
+    border-radius: 50%;
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.chat-head small {
+    display: block;
+    opacity: .75;
+    font-size: .75rem;
+}
+
+.dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 5px;
+    background: #35d49a;
+    border-radius: 50%;
+}
+
+#msgs {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 18px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.msg {
+    max-width: 84%;
+    padding: 10px 14px;
+    border-radius: 16px;
+    font-size: .9rem;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+.msg.user {
+    align-self: flex-end;
+    background: var(--blue);
+    color: #fff;
+    border-bottom-right-radius: 4px;
+}
+
+.msg.ia {
+    align-self: flex-start;
+    background: var(--soft);
+    color: var(--ink);
+    border-bottom-left-radius: 4px;
+}
+
+/* INDICADOR DE DIGITAÇÃO */
+
+.typing span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-right: 3px;
+    background: var(--muted);
+    border-radius: 50%;
+    animation: typingAnimation 1s infinite;
+}
+
+.typing span:nth-child(2) {
+    animation-delay: .15s;
+}
+
+.typing span:nth-child(3) {
+    animation-delay: .3s;
+}
+
+@keyframes typingAnimation {
+
+    0%,
+    60%,
+    100% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(-4px);
+    }
+}
+
+/* =====================================
+   SUGESTÕES DO CHAT
+===================================== */
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-height: 145px;
+    padding: 12px 18px;
+    overflow-y: auto;
+}
+
+.chip {
+    padding: 9px 12px;
+    background: #fff;
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    font: inherit;
+    font-size: .78rem;
+    cursor: pointer;
+    transition: border-color .3s, color .3s;
+}
+
+.chip:hover {
+    border-color: var(--pink);
+    color: var(--pink);
+}
+
+/* =====================================
+   CAMPO DE MENSAGEM
+===================================== */
+
+.input {
+    display: flex;
+    width: 100%;
+    border-top: 1px solid var(--line);
+}
+
+.input input {
+    flex: 1;
+    min-width: 0;
+    padding: 15px 18px;
+    border: 0;
+    outline: none;
+    font: inherit;
+    font-size: .9rem;
+}
+
+.input button {
+    padding: 0 22px;
+    border: 0;
+    background: var(--pink);
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .3s;
+}
+
+.input button:hover {
+    background: #d91e65;
+}
+
+/* FOCO ACESSÍVEL */
+
+:focus-visible {
+    outline: 3px solid #8aa6ff;
+    outline-offset: 2px;
+}
+
+/* =====================================
+   BOTÃO DE MICROFONE
+===================================== */
+
+.btn-microfone {
+    width: 48px;
+    min-width: 48px;
+    border: none;
+    background: #fff;
+    color: var(--pink);
+    font-size: 21px;
+    cursor: pointer;
+    transition: background .3s;
+}
+
+.btn-microfone:hover {
+    background: #fff0f5;
+}
+
+.btn-microfone.gravando {
+    background: #d00000;
+    color: #fff;
+    animation: pulsar 1s infinite;
+}
+
+.btn-microfone:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+}
+
+@keyframes pulsar {
+    50% {
+        opacity: .5;
+    }
+}
+
+/* =====================================
+   AVISO
+===================================== */
+
+.note {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px 48px;
+    color: var(--muted);
+    font-size: .85rem;
+}
+
+/* =====================================
+   VÍDEO
+===================================== */
+
+.video-suporte {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 24px;
+}
+
+.video-suporte h2 {
+    margin-bottom: 6px;
+    font-size: 1rem;
+}
+
+.video-suporte p {
+    margin-bottom: 10px;
+    color: var(--muted);
+    font-size: .8rem;
+}
+
+.video-container {
+    width: 100%;
+    padding: 6px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.video-container video {
+    display: block;
+    width: 100%;
+    max-height: 341px;
+    background: var(--ink);
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+/* =====================================
+   RODAPÉ
+===================================== */
+
+footer {
+    width: 100%;
+    padding: 24px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: .85rem;
+    text-align: center;
+}
+
+/* =====================================
+   TABLETS
+===================================== */
+
+@media (max-width: 920px) {
+    .header-container {
+        gap: 16px;
+    }
+
+    main {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 36px;
+    }
+
+    .chat {
+        position: static;
+        height: 560px;
+    }
+}
+
+/* =====================================
+   CELULARES
+===================================== */
+
+@media (max-width: 600px) {
+    .header-container {
+        padding: 14px 18px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    .header-right {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    main {
+        padding: 35px 18px;
+        gap: 28px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .chat {
+        height: 520px;
+        border-radius: 14px;
+    }
+
+    .note {
+        padding: 0 18px 35px;
+    }
+
+    .video-suporte {
+        max-width: 100%;
+    }
+
+    footer {
+        padding: 20px 14px;
+    }
+}
+
+/* =====================================
+   ACESSIBILIDADE
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}

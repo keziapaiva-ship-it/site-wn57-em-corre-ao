@@ -1,0 +1,643 @@
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+:root {
+    --pink: #ff2d78;
+    --pink-dark: #d91d63;
+    --black: #0d0d0d;
+    --dark: #181818;
+    --card: #202020;
+    --white: #ffffff;
+    --gray: #a5a5a5;
+    --border: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #111111;
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.header {
+    width: 100%;
+    min-height: 85px;
+    padding: 15px 7%;
+    background: #080808;
+    border-bottom: 1px solid #292929;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    position: relative;
+    z-index: 10;
+}
+
+.logo img {
+    width: 105px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.header-direita {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.header-direita a {
+    color: #eeeeee;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.header-direita a:hover {
+    color: var(--pink);
+}
+
+.header-direita .idioma {
+    color: #cccccc;
+}
+
+.header-direita .btn-cadastro {
+    background: var(--pink);
+    color: white;
+    padding: 11px 23px;
+    border-radius: 7px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.header-direita .btn-cadastro:hover {
+    background: var(--pink-dark);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   ÁREA PRINCIPAL
+======================================== */
+
+main {
+    width: 100%;
+    min-height: 70vh;
+    padding: 80px 8%;
+}
+
+/* ========================================
+   PERGUNTAS FREQUENTES
+======================================== */
+
+.faq {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 35px 0 80px;
+}
+
+.tag {
+    display: inline-block;
+    color: var(--pink);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.faq h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.perguntas {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.perguntas details {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 21px 24px;
+    transition: 0.3s ease;
+}
+
+.perguntas details:hover {
+    border-color: var(--pink);
+    transform: translateY(-2px);
+}
+
+.perguntas details[open] {
+    border-color: var(--pink);
+    background: #242024;
+}
+
+.perguntas summary {
+    position: relative;
+    list-style: none;
+    cursor: pointer;
+    padding-right: 35px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+}
+
+.perguntas summary::-webkit-details-marker {
+    display: none;
+}
+
+.perguntas summary::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: -5px;
+    font-size: 25px;
+    color: var(--pink);
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.perguntas details[open] summary::after {
+    content: "−";
+    transform: rotate(180deg);
+}
+
+.perguntas details p {
+    color: #bdbdbd;
+    font-size: 13px;
+    line-height: 1.9;
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px solid #383838;
+}
+
+/* ========================================
+   CONTROLES DO JAVASCRIPT
+======================================== */
+
+.wn57-controles-faq {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.wn57-controles-faq button {
+    border: 1px solid #444;
+    background: #202020;
+    color: white;
+    padding: 9px 15px;
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.wn57-controles-faq button:hover {
+    background: var(--pink);
+    border-color: var(--pink);
+}
+
+.wn57-contador {
+    color: var(--gray);
+    font-size: 11px;
+    margin-left: auto;
+}
+
+/* ========================================
+   BOTÃO COPIAR RESPOSTA
+======================================== */
+
+.wn57-copiar {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 7px 13px;
+    background: transparent;
+    color: var(--pink);
+    border: 1px solid var(--pink);
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.wn57-copiar:hover {
+    background: var(--pink);
+    color: white;
+}
+
+/* ========================================
+   AVALIAÇÃO
+======================================== */
+
+.wn57-avaliacao {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.wn57-avaliacao span {
+    color: #999;
+    font-size: 11px;
+}
+
+.wn57-avaliacao button {
+    background: #292929;
+    border: 1px solid #444;
+    color: white;
+    padding: 6px 11px;
+    border-radius: 6px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.wn57-avaliacao button:hover:not(:disabled) {
+    background: var(--pink);
+    border-color: var(--pink);
+}
+
+.wn57-avaliacao button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ========================================
+   SEÇÃO DE SUPORTE
+======================================== */
+
+.seguranca {
+    max-width: 1100px;
+    margin: 30px auto 70px;
+    padding: 45px 50px;
+    background: linear-gradient(120deg, #24121b, #1b1b1b);
+    border: 1px solid #472437;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.seguranca h2 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.seguranca p {
+    max-width: 600px;
+    color: #bdbdbd;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.seguranca a {
+    display: inline-block;
+    background: var(--pink);
+    color: white;
+    padding: 11px 20px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.seguranca a:hover {
+    background: var(--pink-dark);
+    transform: translateY(-3px);
+}
+
+.seguranca-icone {
+    width: 85px;
+    height: 85px;
+    min-width: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #39202c;
+    border: 1px solid #71324f;
+    border-radius: 20px;
+    font-size: 35px;
+}
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+.rodape {
+    background: #080808;
+    border-top: 1px solid #292929;
+    padding: 45px 8% 25px;
+}
+
+.rodape-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.rodape-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 35px;
+}
+
+.rodape-logo {
+    color: var(--pink);
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.rodape-topo p {
+    color: #999;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.rodape-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.rodape-links a,
+.rodape-legais a {
+    color: #aaa;
+    font-size: 11px;
+    transition: 0.3s;
+}
+
+.rodape-links a:hover,
+.rodape-legais a:hover {
+    color: var(--pink);
+}
+
+.rodape-bottom {
+    border-top: 1px solid #292929;
+    padding-top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+    color: #777;
+    font-size: 10px;
+}
+
+.rodape-legais {
+    display: flex;
+    gap: 20px;
+}
+
+/* ========================================
+   NOTIFICAÇÕES
+======================================== */
+
+.wn57-notificacao {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translate(-50%, 20px);
+    background: #222;
+    color: white;
+    border: 1px solid var(--pink);
+    border-radius: 9px;
+    padding: 13px 22px;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9999;
+    transition: 0.3s;
+    box-shadow: 0 5px 25px #0008;
+}
+
+.wn57-notificacao.mostrar {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+/* ========================================
+   BARRA DE PROGRESSO
+======================================== */
+
+.wn57-progresso {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--pink);
+    z-index: 99999;
+    transition: width 0.1s linear;
+}
+
+/* ========================================
+   VOLTAR AO TOPO
+======================================== */
+
+.wn57-voltar-topo {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 43px;
+    height: 43px;
+    background: var(--pink);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: 0.3s;
+    z-index: 1000;
+    box-shadow: 0 5px 15px #0005;
+}
+
+.wn57-voltar-topo.visivel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.wn57-voltar-topo:hover {
+    background: var(--pink-dark);
+    transform: translateY(-4px);
+}
+
+/* ========================================
+   ANIMAÇÕES
+======================================== */
+
+.wn57-animar {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.wn57-animar.wn57-visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 5%;
+        flex-wrap: wrap;
+    }
+
+    .logo img {
+        width: 85px;
+    }
+
+    .header-direita {
+        gap: 12px;
+    }
+
+    .header-direita a {
+        font-size: 10px;
+    }
+
+    .header-direita .btn-cadastro {
+        padding: 9px 12px;
+    }
+
+    main {
+        padding: 45px 6%;
+    }
+
+    .faq {
+        padding: 20px 0 50px;
+    }
+
+    .faq h2 {
+        font-size: 25px;
+    }
+
+    .perguntas details {
+        padding: 18px;
+    }
+
+    .perguntas summary {
+        font-size: 13px;
+    }
+
+    .seguranca {
+        padding: 30px 25px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .seguranca h2 {
+        font-size: 21px;
+    }
+
+    .rodape-topo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .rodape-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .wn57-contador {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 420px) {
+    .header-direita {
+        gap: 9px;
+    }
+
+    .header-direita .idioma {
+        display: none;
+    }
+
+    .faq h2 {
+        font-size: 22px;
+    }
+
+    .wn57-controles-faq button {
+        font-size: 10px;
+        padding: 8px 10px;
+    }
+
+    .wn57-voltar-topo {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .rodape-legais {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
+
+/* ========================================
+   ACESSIBILIDADE
+======================================== */
+
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+    outline: 2px solid var(--pink);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

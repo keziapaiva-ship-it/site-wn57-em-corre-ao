@@ -1,0 +1,696 @@
+/* WN57 - PÁGINA DE SEGURANÇA */ ok
+
+:root {
+    --pink: #ff2d78;
+    --pink-dark: #d91d63;
+    --black: #0d0d0d;
+    --dark: #181818;
+    --card: #202020;
+    --white: #ffffff;
+    --gray: #a5a5a5;
+    --border: #333333;
+}
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    background: #111111;
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+header {
+    width: 100%;
+    min-height: 76px;
+    padding: 12px 7%;
+    background: #080808;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    position: relative;
+    z-index: 10;
+}
+
+header>a {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+header>a img {
+    display: block;
+    width: 115px;
+    height: 55px;
+    object-fit: contain;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-left: auto;
+}
+
+header nav a {
+    color: #eeeeee;
+    font-size: 13px;
+    font-weight: 500;
+    transition: none;
+}
+
+header nav a:hover {
+    color: #eeeeee;
+}
+
+header nav .btn-cadastro {
+    background: var(--pink);
+    color: white;
+    padding: 10px 19px;
+    border-radius: 7px;
+}
+
+/* BOTÃO DE IDIOMA */
+
+.header-direita {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.idioma,
+.idioma:hover,
+.idioma:focus,
+.idioma:active {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 15px;
+    background: transparent !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: none !important;
+    transform: none !important;
+    transition: none !important;
+    outline: none;
+}
+
+.idioma i {
+    color: #38bdf8 !important;
+    font-size: 13px;
+}
+
+/* =========================================
+   CONTEÚDO PRINCIPAL
+========================================= */
+
+main {
+    width: 100%;
+    min-height: 70vh;
+    padding: 0 8% 75px;
+}
+
+/* =========================================
+   APRESENTAÇÃO
+========================================= */
+
+.hero {
+    width: 100%;
+    min-height: 310px;
+    padding: 60px 20px 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.icone {
+    width: 74px;
+    height: 74px;
+    margin: 0 auto 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 45, 120, 0.13);
+    border: 1px solid rgba(255, 45, 120, 0.4);
+    border-radius: 20px;
+    font-size: 32px;
+}
+
+.tag {
+    display: inline-block;
+    color: var(--pink);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    max-width: 550px;
+    color: #aaaaaa;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   PERGUNTAS FREQUENTES
+========================================= */
+
+.faq {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto 75px;
+}
+
+.faq>.tag {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.faq h2 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.perguntas {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.perguntas details {
+    width: 100%;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: none;
+}
+
+.perguntas details:hover {
+    border-color: var(--border);
+    transform: none;
+}
+
+.perguntas details[open] {
+    border-color: var(--pink);
+    background: #242024;
+}
+
+.perguntas summary {
+    width: 100%;
+    min-height: 58px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    list-style: none;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.perguntas summary::-webkit-details-marker {
+    display: none;
+}
+
+.perguntas summary::after {
+    content: "+";
+    color: var(--pink);
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.perguntas details[open] summary::after {
+    content: "−";
+}
+
+.perguntas details p {
+    margin: 0;
+    padding: 0 22px 20px;
+    color: #bdbdbd;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   CONTROLES DAS PERGUNTAS
+========================================= */
+
+.wn57-controles {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.wn57-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.wn57-controles button {
+    padding: 9px 15px;
+    background: #202020;
+    color: white;
+    border: 1px solid #444444;
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.wn57-controles button:hover {
+    background: #202020;
+    border-color: #444444;
+}
+
+.wn57-total {
+    color: var(--gray);
+    font-size: 11px;
+}
+
+/* =========================================
+   BOTÃO COPIAR RESPOSTA
+========================================= */
+
+.wn57-copiar {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 7px 13px;
+    background: transparent;
+    color: var(--pink);
+    border: 1px solid var(--pink);
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.wn57-copiar:hover {
+    background: transparent;
+    color: var(--pink);
+}
+
+/* =========================================
+   AVALIAÇÃO
+========================================= */
+
+.wn57-avaliacao {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.wn57-avaliacao span {
+    color: #999999;
+    font-size: 11px;
+}
+
+.wn57-avaliacao button {
+    padding: 6px 11px;
+    background: #292929;
+    border: 1px solid #444444;
+    color: white;
+    border-radius: 6px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.wn57-avaliacao button:hover {
+    background: #292929;
+    border-color: #444444;
+}
+
+.wn57-avaliacao button.selecionado {
+    border-color: var(--pink);
+    color: var(--pink);
+}
+
+/* =========================================
+   CONTATO E SUPORTE
+========================================= */
+
+.contato {
+    width: 100%;
+    max-width: 850px;
+    margin: 70px auto 20px;
+    padding: 35px;
+    background: linear-gradient(120deg, #24121b, #1b1b1b);
+    border: 1px solid #472437;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.contato h2 {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.contato p {
+    color: #bdbdbd;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.contato a {
+    display: inline-block;
+    background: var(--pink);
+    color: white;
+    padding: 11px 20px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.contato a:hover {
+    background: var(--pink);
+    transform: none;
+}
+
+.contato-icone {
+    width: 75px;
+    height: 75px;
+    min-width: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #39202c;
+    border: 1px solid #71324f;
+    border-radius: 20px;
+    font-size: 35px;
+}
+
+/* =========================================
+   RODAPÉ
+========================================= */
+
+.rodape {
+    width: 100%;
+    background: #080808;
+    border-top: 1px solid #292929;
+    padding: 40px 8% 25px;
+}
+
+.rodape-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.rodape-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 30px;
+}
+
+.rodape-logo {
+    color: var(--pink);
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.rodape-topo p {
+    color: #999999;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.rodape-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.rodape-links a,
+.rodape-legais a {
+    color: #aaaaaa;
+    font-size: 11px;
+}
+
+.rodape-links a:hover,
+.rodape-legais a:hover {
+    color: #aaaaaa;
+}
+
+.rodape-bottom {
+    border-top: 1px solid #292929;
+    padding-top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+    color: #777777;
+    font-size: 10px;
+}
+
+.rodape-legais {
+    display: flex;
+    gap: 20px;
+}
+
+/* =========================================
+   NOTIFICAÇÕES
+========================================= */
+
+.wn57-notificacao {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translate(-50%, 20px);
+    background: #222222;
+    color: white;
+    border: 1px solid var(--pink);
+    border-radius: 9px;
+    padding: 13px 22px;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9999;
+    transition: opacity .3s ease;
+    box-shadow: 0 5px 25px #0008;
+}
+
+.wn57-notificacao.mostrar {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+/* =========================================
+   PROGRESSO DA PÁGINA
+========================================= */
+
+.wn57-progresso {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--pink);
+    z-index: 99999;
+}
+
+/* =========================================
+   VOLTAR AO TOPO
+========================================= */
+
+.wn57-voltar-topo {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: var(--pink);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.wn57-voltar-topo.visivel {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================================
+   ANIMAÇÕES
+========================================= */
+
+.wn57-animar {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .6s ease, transform .6s ease;
+}
+
+.wn57-animar.wn57-visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 768px) {
+    header {
+        padding: 12px 5%;
+        gap: 12px;
+    }
+
+    header nav {
+        gap: 12px;
+    }
+
+    header nav a {
+        font-size: 12px;
+    }
+
+    main {
+        padding: 0 5% 60px;
+    }
+
+    .hero {
+        min-height: 270px;
+        padding: 45px 15px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .faq h2 {
+        font-size: 23px;
+    }
+
+    .contato {
+        padding: 28px;
+    }
+
+    .rodape-topo {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .rodape-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    header>a img {
+        width: 95px;
+    }
+
+    header nav {
+        gap: 10px;
+    }
+
+    .header-direita {
+        margin-left: auto;
+    }
+
+    .idioma {
+        padding: 8px 5px;
+    }
+
+    .perguntas summary {
+        font-size: 12px;
+        padding: 16px;
+    }
+
+    .perguntas details p {
+        padding: 0 16px 16px;
+    }
+
+    .wn57-controles {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .contato {
+        padding: 23px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contato h2 {
+        font-size: 20px;
+    }
+
+    .rodape-links,
+    .rodape-legais {
+        gap: 12px;
+    }
+}
